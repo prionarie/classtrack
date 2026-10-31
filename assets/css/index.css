@@ -1,0 +1,306 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #dbeafe, #fdf2f8);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #1748aa, #cc57dd);
+  color: white;
+  padding: 10px 30px;
+}
+
+.navbar img {
+  height: 60px;
+  margin-right: 30px;
+}
+
+.nav-items {
+  display: flex;
+  flex: 0.9;
+  justify-content: space-around;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.nav-item:hover {
+  color: #ffdd57;
+  text-decoration: none;
+}
+
+.nav-item i {
+  margin-right: 5px;
+}
+
+.dashboard {
+  background: linear-gradient(to right, #1748aa, #cc57dd);
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  border: 2px solid #eee;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-box {
+  background: linear-gradient(to right, #dbeafe, #fdf2f8);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.dashboard h1 {
+  font-size: 28px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dashboard h2 {
+  font-size: 36px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 800px;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 20px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card button {
+  background-color: #3b82f6;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #2563eb;
+}
+
+.columns {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.column {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#accountToggle {
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s ease;
+}
+
+#accountToggle:hover {
+  color: #ffdd57;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0%;
+  background: linear-gradient(to right, #1748aa, #cc57dd);
+  border-radius: 8px;
+  min-width: 200px;
+  z-index: 999;
+  padding: 10px 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-content.show {
+  display: block;
+  animation: fadeInDropdown 0.3s ease forwards;
+}
+
+#arrowIcon {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.rotate-up {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 390px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .navbar img {
+    height: 50px;
+    margin: 0 0 10px 0;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-item {
+    font-size: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dashboard {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .dashboard h1 {
+    font-size: 24px;
+  }
+
+  .dashboard h2 {
+    font-size: 28px;
+  }
+
+  .dashboard-box {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .card button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .column {
+    min-width: 100%;
+  }
+
+  .dropdown-container {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    min-width: 100%;
+  }
+}
