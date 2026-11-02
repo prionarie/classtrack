@@ -1,5 +1,5 @@
 <?php
-include "../assets/db/dbcon.php";
+include "config/dbcon.php";
 session_start();
 
 if (!isset($_SESSION['employee_id'])) {
@@ -28,13 +28,13 @@ if (isset($con) && $con) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instructor Dashboard | [Placeholder] Class Attendance Report System</title>
-  <link rel="stylesheet" href="../assets/css/index.css">
+  <title>Instructor Dashboard | School Class Attendance Report System</title>
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
 
 <div class="navbar">
-  <img src="../assets/imgs/[Placeholder]-logo.png" alt="[Placeholder] Logo">
+  <img src="assets/imgs/school-logo.png" alt="School Logo">
   <div class="nav-items">
     <a class="nav-item" href="index.php">🏠 HOME</a>
     <a class="nav-item" href="instructors/lists/classlist.php">📚 CLASSES</a>
@@ -52,7 +52,7 @@ if (isset($con) && $con) {
 </div>
 
 <div class="dashboard">
-  <h1>[Placeholder] CLASS ATTENDANCE REPORT SYSTEM</h1>
+  <h1>School CLASS ATTENDANCE REPORT SYSTEM</h1>
   <h2>INSTRUCTOR DASHBOARD</h2>
     <div class="dashboard-box">
       <div class="card-grid">
@@ -92,7 +92,7 @@ if (isset($con) && $con) {
     </div>
 </div>
 
-<script src="../assets/js/dropdown.js"></script>
+<script src="assets/js/dropdown.js"></script>
 
 </body>
 </html>
