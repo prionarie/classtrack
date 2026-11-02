@@ -13,22 +13,22 @@ ClassTrack is a class attendance system designed for college instructors and stu
 
 #### 2.1. Class Registration
 
-- **Instructors:** 
-- **Students:**
+- **Instructors:** Create class record for a sections and assign their course and class schedule.
+- **Students:** Select and enroll in existing sections and courses.
 
 ![Class Registration](/screenshots/2classlist.png)
 
 #### 2.2. Attendance Records
 
-- **Instructors:** 
-- **Students:**
+- **Instructors:** Create attendance records and mark students as present, absent or late. Remarks and reports columns update when student submits an absence report.
+- **Students:** View their attendance records.
 
 ![Attendance Records](/screenshots/3attendance.png)
 
 #### 2.3. Absence Reports
 
-- **Instructors:** 
-- **Students:**
+- **Instructors:** View submitted absence reports by students. Teacher can validate or reject their reports. While unmarked, its status is 'Pending.'
+- **Students:** If student is marked absent, they can submit an absence report and provide the date, description and upload documents and images to support the reasoning for their absence.
 
 ![Absence Reports](/screenshots/4reports.png)
 
