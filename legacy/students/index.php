@@ -1,5 +1,5 @@
 <?php
-include "../../config/dbcon.php";
+include "../config/dbcon.php";
 session_start();
 
 if (!isset($_SESSION['student_number'])) {
@@ -25,12 +25,12 @@ if ($row = $result->fetch_assoc()) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard | School Class Attendance Report System</title>
-  <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
 </head>
 <body>
 
 <div class="navbar">
-  <img src="../../assets/imgs/school-logo.png" alt="School Logo">
+  <img src="../assets/imgs/school-logo.png" alt="School Logo">
   <div class="nav-items">
     <a class="nav-item" href="index.php">🏠 HOME</a>
     <a class="nav-item" href="lists/classlist.php">📚 CLASSES</a>
@@ -48,7 +48,7 @@ if ($row = $result->fetch_assoc()) {
 </div>
 
 <div class="dashboard">
-  <h1>School CLASS ATTENDANCE REPORT SYSTEM</h1>
+  <h1>SCHOOL CLASS ATTENDANCE REPORT SYSTEM</h1>
   <h2>STUDENT DASHBOARD</h2>
     <div class="dashboard-box">
       <div class="card-grid">
@@ -83,7 +83,7 @@ if ($row = $result->fetch_assoc()) {
     </div>
 </div>
 
-<script src="../../assets/js/dropdown.js"></script>
+<script src="../assets/js/dropdown.js"></script>
 
 </body>
 </html>

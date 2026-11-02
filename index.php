@@ -52,7 +52,7 @@ if (isset($con) && $con) {
 </div>
 
 <div class="dashboard">
-  <h1>School CLASS ATTENDANCE REPORT SYSTEM</h1>
+  <h1>SCHOOL CLASS ATTENDANCE REPORT SYSTEM</h1>
   <h2>INSTRUCTOR DASHBOARD</h2>
     <div class="dashboard-box">
       <div class="card-grid">

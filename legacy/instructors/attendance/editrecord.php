@@ -26,7 +26,7 @@ if (!$record_id) {
 
 $query_record = "SELECT r.class_id, r.date, c.course_code, c.section 
                  FROM attendance_records r 
-                 JOIN Classes c ON r.class_id = c.class_id 
+                 JOIN classes c ON r.class_id = c.class_id 
                  WHERE r.record_id = ?";
 $stmt = $con->prepare($query_record);
 $stmt->bind_param("i", $record_id);
@@ -54,20 +54,6 @@ $stmt = $con->prepare($query_students);
 $stmt->bind_param("iii", $record_id, $record_id, $record['class_id']);
 $stmt->execute();
 $students_result = $stmt->get_result();
-
-$total = 0;
-$present = 0;
-
-while ($row = $students_result->fetch_assoc()) {
-    $total++;
-    if ($row['status'] === 'Present' || $row['status'] === 'Late') {
-        $present++;
-    }
-    $student_rows[] = $row;
-}
-
-$isComplete = ($total > 0 && $present === $total);
-
 ?>
 
 <!DOCTYPE html>
@@ -99,12 +85,13 @@ $isComplete = ($total > 0 && $present === $total);
       </div>
   </div>
 </div>
-<a href="../lists/attendancelist.php" class="go-back">Go Back</a>
+
+<a href="viewrecord.php?record_id=<?= urlencode($record_id) ?>" class="go-back">Go Back</a>
 
 <div class="page-container">
   <div class="container-box">
     <div class="container-header">
-      <h2>View Attendance Record</h2>
+      <h2>Edit Attendance Record</h2>
     </div>
 
     <div class="class-info">
@@ -114,33 +101,27 @@ $isComplete = ($total > 0 && $present === $total);
       <div class="class-box">
         <p><strong>Section: </strong><?= htmlspecialchars($section) ?></p>
       </div>
-    </div>
-    <div class="class-info">
       <div class="class-box">
         <p><strong>Date: </strong><?= htmlspecialchars($date) ?></p>
-      </div>
-      <div class="class-box">
-        <p><strong>Present/Total:</strong> 
-         <span class="<?= $isComplete ? 'complete' : '' ?>"><?= $present ?>/<?= $total ?></span>
-        </p>
       </div>
     </div>
   </div>
 
-  <a href="editrecord.php?record_id=<?= urlencode($record_id) ?>" class="btn save">Edit Record</a>
-  <?php $seq = 1; ?>
-  <table>
-    <tr>
-      <th>No.</th>
-      <th>Student Number</th>
-      <th>Last Name</th>
-      <th>First Name</th>
-      <th>Middle Name</th>
-      <th>Status</th>
-      <th>Remarks</th>
-      <th>Reports</th>
-    </tr>
-      <?php foreach ($student_rows as $row): ?>
+  <form action="saverecord.php" method="POST">
+    <input type="hidden" name="record_id" value="<?= $record_id ?>"> 
+    <?php $seq = 1; ?>
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>Student Number</th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Status</th>
+        <th>Remarks</th>
+        <th>Reports</th>
+      </tr>
+      <?php while ($row = $students_result->fetch_assoc()): ?>
       <tr>
         <td><?= $seq++ ?></td>
         <td><?= htmlspecialchars($row['student_number']) ?></td>
@@ -149,20 +130,18 @@ $isComplete = ($total > 0 && $present === $total);
         <td><?= htmlspecialchars($row['middle_name']) ?></td>
         <td>
           <?php
-            $status = $row['status'] ?? '';
-              if ($status === 'Present') {
-                $statusClass = 'status-present';
-              } elseif ($status === 'Absent') {
-                $statusClass = 'status-absent';
-              } elseif ($status === 'Late') {
-                $statusClass = 'status-late';
-              } else {
-                $statusClass = 'status-default';
-              }
+          $statuses = ['Present', 'Absent', 'Late'];
+          $colors = ['Present' => 'green', 'Absent' => 'red', 'Late' => 'goldenrod'];
           ?>
-          <span class="<?= $statusClass; ?>">
-            <?= htmlspecialchars($status ?: '—'); ?>
-          </span>
+          <?php foreach ($statuses as $status): ?>
+            <label style="color: <?= $colors[$status] ?>;">
+              <input type="radio"
+              name="status[<?= $row['student_number'] ?>]"
+              value="<?= $status ?>"
+              <?= ($row['status'] === $status) ? 'checked' : '' ?>>
+              <?= $status ?>
+            </label>
+          <?php endforeach; ?>
         </td>
         <td>
           <?php
@@ -190,8 +169,10 @@ $isComplete = ($total > 0 && $present === $total);
           <?php endif; ?>
         </td>
       </tr>
-      <?php endforeach; ?>
+      <?php endwhile; ?>
     </table>
+    <button type="submit" class="btn save">Save</button>
+  </form>
 </div>
 
 <script src="../../assets/js/dropdown.js"></script>

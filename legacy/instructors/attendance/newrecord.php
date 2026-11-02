@@ -22,7 +22,7 @@ $record_id = $_GET['record_id'];
 
 $query_record = "SELECT r.class_id, r.date, c.course_code, c.section 
                  FROM attendance_records r 
-                 JOIN Classes c ON r.class_id = c.class_id 
+                 JOIN classes c ON r.class_id = c.class_id 
                  WHERE r.record_id = ?";
 $stmt = $con->prepare($query_record);
 $stmt->bind_param("i", $record_id);

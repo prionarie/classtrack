@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="login-box">
     <div class="login-header">
       <img src="../../assets/imgs/school-logo.png" alt="School Logo" class="logo">
-      <h2>WELCOME TO School CLASS<br>ATTENDANCE REPORT SYSTEM</h2>
+      <h2>WELCOME TO SCHOOL CLASS<br>ATTENDANCE REPORT SYSTEM</h2>
     </div>
 
     <form action="login.php" method="POST">
