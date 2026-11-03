@@ -6,7 +6,7 @@ ClassTrack is a class attendance system designed for college instructors and stu
 
 ## 1. Project Status
 - This was my first CRUD project and records the mistakes I did as an early developer. I observed structural and logical flaws system design and factoring. As a testament to how much I've grown over the years, I've decided to rebuild the project with a framework and modern tech stack.
-- This rebuild aims to practice my skills with my target standardized tech stack and workflows. Additionally, it gives me an opportunity to observe and report improvements in engineering practices, file structure and application performance between the legacy and modernized project.
+- This rebuild aims to practice my skills with my target standardized tech stack and workflows. Additionally, it gives me an opportunity to observe and report improvements in engineering practices and the application's performance, efficiency and security between the legacy and modernized project.
 - **Key Goals:** FastAPI backend framework, React frontend framework, PostgreSQL database migration, Docker containerization, and configure for cloud deployment (Azure/AWS/GCP)
 
 ## 2. Key Features
