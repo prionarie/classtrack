@@ -35,6 +35,7 @@ ClassTrack is a class attendance system designed for college instructors and stu
 | Database | MySQL | PostgreSQL |
 | Frontend | HTML, CSS, Vanilla JavaScript | React & TypeScript |
 | Build | — | Vite |
+| Testing | — | PyTest & Playwright |
 | Containerization | — | Docker |
 
 **Note:** This project is undergoing active rewrite. The original PHP application lives in the `legacy/` directory and is being ported to a modernized stack. Both legacy and modernized versions of the application can run during the transition period.
