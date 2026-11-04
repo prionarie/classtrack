@@ -1,4 +1,4 @@
-# ClassTrack: Class Attendance and Absence Report System
+# ClassTrack | Class Attendance and Absence Report System
 
 ClassTrack is a class attendance system designed for college instructors and students. It lets instructors create and mark daily attendance records, and students submit absence reports with proof through document uploads. 
 
