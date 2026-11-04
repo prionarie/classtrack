@@ -33,9 +33,9 @@ ClassTrack is a class attendance system designed for college instructors and stu
 |---|---|---|
 | Backend | PHP | Python FastAPI |
 | Database | MySQL | PostgreSQL |
-| Frontend | HTML, CSS, Vanilla JavaScript | React & TypeScript |
+| Frontend | HTML, CSS, JavaScript | React, TypeScript |
 | Build | — | Vite |
-| Testing | — | PyTest & Playwright |
+| Testing | — | PyTest, Playwright |
 | Containerization | — | Docker |
 
 **Note:** This project is undergoing active rewrite. The original PHP application lives in the `legacy/` directory and is being ported to a modernized stack. Both legacy and modernized versions of the application can run during the transition period.
@@ -43,7 +43,7 @@ ClassTrack is a class attendance system designed for college instructors and stu
 ## 3. Project Status
 - This was my first CRUD project and records the mistakes I made as an early developer. I observed structural and logical flaws in the system design and factoring. As a testament to how much I've grown over the years, I've decided to rebuild the project with a framework and modern tech stack.
 - This rebuild aims to practice my skills with my target standardized tech stack and workflows. Additionally, it gives me an opportunity to observe and report improvements in engineering practices and the application's performance, efficiency, and security between the legacy and modernized project.
-- **Key Goals:** FastAPI backend framework, React frontend framework, PostgreSQL database migration, Docker containerization, and configuration for cloud deployment (Azure/AWS/GCP)
+- **Key Goals:** FastAPI backend framework, React frontend framework, PostgreSQL database migration, Docker containerization, end-to-end testing with Playwright, and deployment configuration for cloud environment (Azure/AWS/GCP)
 
 ## 4. Project Structure
 
