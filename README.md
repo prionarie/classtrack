@@ -29,8 +29,6 @@ ClassTrack is a class attendance system designed for college instructors and stu
 
 ## 2. Tech Stack
 
-**Note:** This project is undergoing active rewrite. The original PHP application lives in the `legacy/` directory and is being ported to a modernized stack. Both legacy and modernized versions of the application can run during the transition period.
-
 | Layer | Current (legacy) | Target (new) |
 |---|---|---|
 | Backend | PHP | Python FastAPI |
@@ -38,6 +36,8 @@ ClassTrack is a class attendance system designed for college instructors and stu
 | Frontend | HTML, CSS, Vanilla JavaScript | React & TypeScript |
 | Build | — | Vite |
 | Containerization | — | Docker |
+
+**Note:** This project is undergoing active rewrite. The original PHP application lives in the `legacy/` directory and is being ported to a modernized stack. Both legacy and modernized versions of the application can run during the transition period.
 
 ## 3. Project Status
 - This was my first CRUD project and records the mistakes I made as an early developer. I observed structural and logical flaws in the system design and factoring. As a testament to how much I've grown over the years, I've decided to rebuild the project with a framework and modern tech stack.
